@@ -10,19 +10,17 @@
 <body>
     <h1>Selezione genere</h1>
     <form action="pages/sottogeneri.php" method="post">
-        <select name="genere" id="genere">
-            <option>---Selezionare genere musicale---</option>
+
             
             <?php
                 while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
             {
-                echo "<option value='".$row['id_genere']."'>".$row['nome_genere']."</option>";
+                echo "<input type='radio' name=genere value='".$row['id_genere']."'>".$row['nome_genere'];
             }
         
             ?>
         
-        
-        </select>
+
         <br><br>
         <input type="submit" value="Cerca">
     </form>
